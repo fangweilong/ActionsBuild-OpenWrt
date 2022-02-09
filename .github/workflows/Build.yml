@@ -85,11 +85,7 @@ jobs:
     - name: 生成配置
       working-directory: ./openwrt
       run: |
-        echo '查看根目录' 
-        ls -d */
         make defconfig
-        echo '查看新生成的config'
-        cat .config
 
     - name: 下载依赖
       working-directory: ./openwrt
