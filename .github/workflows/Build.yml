@@ -63,6 +63,7 @@ jobs:
         cd ../shell
         ls
         echo '查看config文件'
+        cd ../
         cat $CONFIG_FILE
 
     - name: 拉取openwrt源码
