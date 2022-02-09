@@ -66,6 +66,9 @@ jobs:
         echo '查看config文件'
         cd ../
         cat $CONFIG_FILE
+        echo '查看GITHUB_WORKSPACE'
+        cd $GITHUB_WORKSPACE
+        ls
 
     - name: 拉取openwrt源码
       run: |
