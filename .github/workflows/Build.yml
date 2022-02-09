@@ -60,8 +60,7 @@ jobs:
         cd config
         ls
         echo '查看shell'
-        cd ../shell
-        ls
+        cd ../
         cat $DIY1
         cat $DIY2
         echo '查看config文件'
