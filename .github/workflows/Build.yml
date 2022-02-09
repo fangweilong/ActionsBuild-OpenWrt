@@ -58,17 +58,6 @@ jobs:
         
     - name: 查看一些属性
       run: |
-        echo '默认地址'
-        ls -d */
-        echo '查看config'
-        cd config
-        ls
-        cd ../
-        echo '查看shell'
-        cat $DIY1
-        cat $DIY2
-        echo '查看config文件'
-        cat $CONFIG_FILE
         echo '查看GITHUB_WORKSPACE'
         cd $GITHUB_WORKSPACE
         ls -d */
@@ -90,6 +79,7 @@ jobs:
         [ -e $GITHUB_WORKSPACE/$CONFIG_FILE ] && echo '有提供配置，将使用用户提供的配置安装依赖和插件' && mv $GITHUB_WORKSPACE/$CONFIG_FILE openwrt/.config
 
     - name: DIY2（一般用于ip和样式等）
+      working-directory: ./openwrt
       run: |
         [ -e $GITHUB_WORKSPACE/$DIY2 ] && echo '有提供DIY2，将开始DIY' && chmod +x $GITHUB_WORKSPACE/$DIY2 && $GITHUB_WORKSPACE/$DIY2
 
@@ -98,8 +88,6 @@ jobs:
       run: |
         echo '查看根目录' 
         ls -d */
-        echo '查看.config' 
-        cat .config
         make defconfig
         echo '查看新生成的config'
         cat .config
