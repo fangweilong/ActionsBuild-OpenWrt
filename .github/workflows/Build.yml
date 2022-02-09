@@ -73,7 +73,7 @@ jobs:
     - name: DIY1(一般用于安装依赖和插件)
       working-directory: ./openwrt
       run: |
-        [ -e $DIY1 ] && echo '有提供DIY1，将开始DIY' && chmod +x $DIY1 && $DIY1
+        [ -e $GITHUB_WORKSPACE/$DIY1 ] && echo '有提供DIY1，将开始DIY' && chmod +x $GITHUB_WORKSPACE/$DIY1 && $GITHUB_WORKSPACE/$DIY1
 
     - name: 安装并更新资源
       working-directory: ./openwrt
@@ -84,14 +84,11 @@ jobs:
 
     - name: 加载.config配置项
       run: |
-        [ -e $CONFIG_FILE ] && echo '有提供配置，将使用用户提供的配置安装依赖和插件' && mv $CONFIG_FILE openwrt/.config
-        echo '查看.config文件配置是否正确'
-        cat .config
+        [ -e $GITHUB_WORKSPACE/$CONFIG_FILE ] && echo '有提供配置，将使用用户提供的配置安装依赖和插件' && mv $GITHUB_WORKSPACE/$CONFIG_FILE openwrt/.config
 
     - name: DIY2（一般用于ip和样式等）
       run: |
-        [ -e $DIY2 ] && echo '有提供DIY2，将开始DIY'
-        [ -e $DIY2 ] && chmod +x $DIY2 && $DIY2
+        [ -e $GITHUB_WORKSPACE/$DIY2 ] && echo '有提供DIY2，将开始DIY' && chmod +x $GITHUB_WORKSPACE/$DIY2 && $GITHUB_WORKSPACE/$DIY2
 
     - name: 生成配置
       working-directory: ./openwrt
