@@ -51,14 +51,18 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
-    
+
+    - name: 拉取openwrt源码
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH $GITHUB_WORKSPACE/openwrt
+        
     - name: 查看一些属性
       run: |
         echo '默认地址'
-        ls
+        ls -d */
         echo '查看config'
         cd config
-        ls
+        ls -d */
         cd ../
         echo '查看shell'
         cat $DIY1
@@ -67,11 +71,7 @@ jobs:
         cat $CONFIG_FILE
         echo '查看GITHUB_WORKSPACE'
         cd $GITHUB_WORKSPACE
-        ls
-
-    - name: 拉取openwrt源码
-      run: |
-        git clone --depth 1 $REPO_URL -b $REPO_BRANCH $GITHUB_WORKSPACE/openwrt
+        ls -d */
 
     - name: DIY1(一般用于安装依赖和插件)
       working-directory: ./openwrt
@@ -97,7 +97,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         echo '查看根目录' 
-        find ./ -type f
+        ls -d */
         echo '查看.config' 
         cat .config
         make defconfig
