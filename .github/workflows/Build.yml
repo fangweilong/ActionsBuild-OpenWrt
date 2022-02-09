@@ -62,7 +62,7 @@ jobs:
         ls -d */
         echo '查看config'
         cd config
-        ls -d */
+        ls
         cd ../
         echo '查看shell'
         cat $DIY1
