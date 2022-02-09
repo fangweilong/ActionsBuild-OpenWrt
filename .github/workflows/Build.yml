@@ -82,8 +82,9 @@ jobs:
         [ -e $GITHUB_WORKSPACE/$DIY2 ] && chmod +x $GITHUB_WORKSPACE/$DIY2 && $GITHUB_WORKSPACE/$DIY2
 
     - name: 生成配置
+      working-directory: ./openwrt
       run: |
-        cd openwrt && make defconfig
+        make defconfig
 
     - name: 下载依赖
       working-directory: ./openwrt
