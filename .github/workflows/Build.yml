@@ -62,6 +62,8 @@ jobs:
         echo '查看shell'
         cd ../shell
         ls
+        cat $DIY1
+        cat $DIY2
         echo '查看config文件'
         cd ../
         cat $CONFIG_FILE
