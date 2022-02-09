@@ -97,7 +97,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         echo '查看根目录' 
-        ls
+        find ./ -type f
         echo '查看.config' 
         cat .config
         make defconfig
