@@ -96,7 +96,10 @@ jobs:
     - name: 生成配置
       working-directory: ./openwrt
       run: |
+        echo '查看根目录' 
         ls
+        echo '查看.config' 
+        cat .config
         make defconfig
         echo '查看新生成的config'
         cat .config
