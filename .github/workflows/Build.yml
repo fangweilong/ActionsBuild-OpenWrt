@@ -59,12 +59,11 @@ jobs:
         echo '查看config'
         cd config
         ls
-        echo '查看shell'
         cd ../
+        echo '查看shell'
         cat $DIY1
         cat $DIY2
         echo '查看config文件'
-        cd ../
         cat $CONFIG_FILE
         echo '查看GITHUB_WORKSPACE'
         cd $GITHUB_WORKSPACE
