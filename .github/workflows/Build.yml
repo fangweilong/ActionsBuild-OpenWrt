@@ -86,6 +86,8 @@ jobs:
       working-directory: ./openwrt
       run: |
         make defconfig
+        echo '查看最终生成的.config文件'
+        cat .config
 
     - name: 下载依赖
       working-directory: ./openwrt
