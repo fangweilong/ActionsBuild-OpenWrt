@@ -44,3 +44,5 @@
 - ac2100等性能比较垃圾的固件，不要安装太多app，比如clash等可以考虑使用ssrp+来替换。或者直接使用padavan的固件
 
 - 提取专属config文件：./scripts/diffconfig.sh > diffconfig
+
+- 参考[OpenWrt MenuConfig设置和LuCI插件选项说明](https://mtom.ml/827.html)
