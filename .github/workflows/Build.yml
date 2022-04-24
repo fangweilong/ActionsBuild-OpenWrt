@@ -9,7 +9,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: config/cr660x.config
+  CONFIG_FILE: config/ax6s.config
   DIY1: shell/diy-by-packages.sh
   DIY2: shell/diy-by-config.sh
   TZ: Asia/Shanghai
