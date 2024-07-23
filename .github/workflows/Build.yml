@@ -1,15 +1,15 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
   workflow_dispatch:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: config/redmi_ac2100.config
+  CONFIG_FILE: config/ax6s.config
   DIY1: shell/diy-by-packages.sh
   DIY2: shell/diy-by-config.sh
   TZ: Asia/Shanghai
